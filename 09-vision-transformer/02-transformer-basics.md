@@ -337,7 +337,7 @@ print(f"총 파라미터: {sum(p.numel() for p in encoder.parameters()):,}")
 - **Self-Attention**: Q, K, V 모두 같은 출처 → 자기 자신의 관계 파악
 - **Cross-Attention**: Q는 디코더에서, K와 V는 인코더에서 → 두 시퀀스 간 관계 파악
 
-이 패턴은 컴퓨터 비전에서도 중요하게 쓰입니다. [DETR](../07-object-detection/05-detr.md)의 객체 탐지, Stable Diffusion의 텍스트-이미지 생성 등에서 Cross-Attention이 핵심 역할을 합니다.
+이 패턴은 컴퓨터 비전에서도 중요하게 쓰입니다. [DETR](../07-object-detection/05-detr.md)에서 Object Query가 이미지 특징과 교차 어텐션하여 객체를 탐지하고, [Mask2Former](../08-segmentation/03-panoptic-segmentation.md)에서 마스크 쿼리가 특징 맵과 교차 어텐션하여 세그멘테이션을 수행하며, [SAM](../08-segmentation/04-sam.md)에서 프롬프트 임베딩이 이미지 임베딩과 교차 어텐션하여 마스크를 예측합니다. Stable Diffusion의 텍스트-이미지 생성에서도 Cross-Attention이 핵심 역할을 하죠.
 
 ## 흔한 오해와 팁
 

@@ -17,7 +17,7 @@
 
 2020년까지 컴퓨터 비전은 **CNN의 세상**이었습니다. [LeNet부터 EfficientNet까지](../05-cnn-architectures/01-lenet-alexnet.md) 합성곱 연산은 이미지 처리에 필수불가결한 것처럼 보였죠. 그런데 Google Brain 팀이 대담한 질문을 던졌습니다. *"정말 합성곱이 꼭 필요할까?"*
 
-놀랍게도 답은 **"아니오"**였습니다. NLP에서 성공한 Transformer를 이미지에 **거의 변형 없이** 적용했더니, 충분한 데이터만 있으면 CNN을 능가하는 성능이 나온 것입니다. 이후 ViT는 이미지 분류뿐 아니라 객체 탐지, 세그멘테이션, 이미지 생성 등 비전 전반으로 확산되었고, 오늘날 대부분의 최신 비전 모델의 기반이 되었습니다.
+놀랍게도 답은 **"아니오"**였습니다. NLP에서 성공한 Transformer를 이미지에 **거의 변형 없이** 적용했더니, 충분한 데이터만 있으면 CNN을 능가하는 성능이 나온 것입니다. 이후 ViT는 이미지 분류를 넘어 비전 전반으로 확산되었습니다. [DETR](../07-object-detection/05-detr.md)은 ViT의 등장 이전부터 Transformer를 탐지에 적용했고, [SAM](../08-segmentation/04-sam.md)은 ViT-Huge를 이미지 인코더로 사용하며, [Mask2Former](../08-segmentation/03-panoptic-segmentation.md)는 Swin Transformer 백본 위에서 모든 세그멘테이션을 통합했습니다. 오늘날 대부분의 최신 비전 모델의 기반이 ViT입니다.
 
 ## 핵심 개념
 

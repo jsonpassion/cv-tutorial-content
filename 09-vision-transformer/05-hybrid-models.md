@@ -132,7 +132,7 @@ CoAtNet의 구조:
 | 상황 | 추천 모델 | 이유 |
 |------|----------|------|
 | **최고 정확도** (서버, 대규모 데이터) | ViT-L/H, CoAtNet | 글로벌 어텐션의 압도적 성능 |
-| **탐지/세그멘테이션 백본** | Swin-T/B | 계층적 특징, FPN 호환 |
+| **[탐지](../07-object-detection/01-detection-basics.md)/[세그멘테이션](../08-segmentation/01-semantic-segmentation.md) 백본** | Swin-T/B | 계층적 특징, [FPN](../07-object-detection/02-rcnn-family.md) 호환 |
 | **범용 (균형잡힌 선택)** | ConvNeXt-B | 높은 정확도 + 빠른 속도 + 쉬운 파인튜닝 |
 | **모바일 앱** | MobileViT, FastViT | 경량 + 합리적 정확도 |
 | **실시간 엣지 추론** | EfficientFormer, EdgeViT | 최소 지연시간 |

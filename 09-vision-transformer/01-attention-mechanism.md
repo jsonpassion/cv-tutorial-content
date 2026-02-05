@@ -19,7 +19,7 @@
 
 예를 들어볼까요? 사진 속에서 하늘에 있는 비행기와 땅 위의 그림자를 동시에 파악하려면, CNN은 여러 레이어를 거쳐야 합니다. 하지만 어텐션 메커니즘은 **단 한 번의 연산으로** 이미지의 어느 위치든 연결할 수 있죠. 이것이 바로 2020년대에 Vision Transformer가 CNN을 대체하기 시작한 핵심 이유입니다.
 
-오늘날 ChatGPT, DALL-E, Stable Diffusion, Sora 등 우리가 아는 거의 모든 최신 AI의 심장에는 어텐션 메커니즘이 뛰고 있습니다.
+오늘날 ChatGPT, DALL-E, Stable Diffusion, Sora 등 우리가 아는 거의 모든 최신 AI의 심장에는 어텐션 메커니즘이 뛰고 있습니다. 컴퓨터 비전만 봐도, [DETR](../07-object-detection/05-detr.md)은 어텐션으로 NMS 없이 객체를 탐지하고, [Mask2Former](../08-segmentation/03-panoptic-segmentation.md)는 어텐션으로 모든 세그멘테이션 태스크를 통합했으며, [SAM](../08-segmentation/04-sam.md)은 어텐션으로 세상의 모든 것을 분할합니다.
 
 ## 핵심 개념
 

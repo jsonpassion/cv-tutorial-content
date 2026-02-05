@@ -81,7 +81,7 @@ Stage 사이의 **Patch Merging** 과정:
 2. 채널을 이어 붙임: $C \rightarrow 4C$
 3. 선형 레이어로 $4C \rightarrow 2C$로 축소
 
-이 계층적 구조 덕분에 Swin Transformer는 CNN과 동일한 형태의 **피라미드 특징 맵**을 생성합니다. 이것이 왜 중요하냐면, 객체 탐지의 FPN(Feature Pyramid Network)이나 세그멘테이션의 U-Net 같은 기존 프레임워크에 **그대로 끼워 넣을 수 있기** 때문입니다. ViT는 단일 스케일 출력이라 이런 통합이 어려웠죠.
+이 계층적 구조 덕분에 Swin Transformer는 CNN과 동일한 형태의 **피라미드 특징 맵**을 생성합니다. 이것이 왜 중요하냐면, [객체 탐지의 FPN](../07-object-detection/02-rcnn-family.md)이나 [세그멘테이션의 U-Net](../08-segmentation/01-semantic-segmentation.md) 같은 기존 프레임워크에 **그대로 끼워 넣을 수 있기** 때문입니다. 실제로 Swin Transformer는 [Mask2Former](../08-segmentation/03-panoptic-segmentation.md)의 기본 백본으로 채택되었고, [DETR 계열](../07-object-detection/05-detr.md)의 Deformable DETR에서도 백본으로 사용됩니다. ViT는 단일 스케일 출력이라 이런 통합이 어려웠죠.
 
 ### 개념 4: ViT vs Swin — 언제 뭘 쓸까?
 
@@ -90,7 +90,7 @@ Stage 사이의 **Patch Merging** 과정:
 | **복잡도** | $O(n^2)$ 이차 | $O(n)$ 선형 |
 | **특징 스케일** | 단일 스케일 | 다중 스케일 (피라미드) |
 | **어텐션 범위** | 전역 (모든 패치) | 지역 (윈도우) + 시프트 |
-| **최적 용도** | 분류 (대규모 데이터) | 탐지, 세그멘테이션, 범용 백본 |
+| **최적 용도** | 분류 (대규모 데이터) | [탐지](../07-object-detection/01-detection-basics.md), [세그멘테이션](../08-segmentation/01-semantic-segmentation.md), 범용 백본 |
 | **고해상도** | 비효율적 | **효율적** |
 | **기존 프레임워크 호환** | 어려움 | **ResNet 대체 가능** |
 
@@ -305,7 +305,7 @@ print(f"파라미터 수: {sum(p.numel() for p in model.parameters()):,}")  # ~2
 
 Swin Transformer는 2021년 ICCV(International Conference on Computer Vision)에서 **최우수 논문상(Marr Prize)**을 수상했습니다. 이 상은 컴퓨터 비전 분야에서 가장 권위 있는 상 중 하나인데요, Microsoft Research Asia의 Ze Liu 등이 저자입니다.
 
-수상 이유는 명확했습니다. ViT가 "합성곱 없이도 된다"는 것을 보여줬다면, Swin은 "Transformer로 CNN이 하는 **모든 것**을 대체할 수 있다"는 것을 증명했기 때문입니다. 분류뿐 아니라 탐지, 세그멘테이션, 비디오 분석까지, Swin은 거의 모든 벤치마크에서 기존 CNN 백본을 능가했습니다.
+수상 이유는 명확했습니다. ViT가 "합성곱 없이도 된다"는 것을 보여줬다면, Swin은 "Transformer로 CNN이 하는 **모든 것**을 대체할 수 있다"는 것을 증명했기 때문입니다. 분류뿐 아니라 탐지, 세그멘테이션, 비디오 분석까지, Swin은 거의 모든 벤치마크에서 기존 CNN 백본을 능가했습니다. [COCO 객체 탐지](../07-object-detection/01-detection-basics.md), [ADE20K 세그멘테이션](../08-segmentation/01-semantic-segmentation.md) 등에서 새로운 기록을 세웠죠.
 
 ### Swin Transformer V2 (2022)
 
