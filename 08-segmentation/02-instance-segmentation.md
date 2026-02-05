@@ -137,7 +137,7 @@ print(f"마스크 출력: {masks.shape}")          # [5, 80, 28, 28]
 
 > 💡 **비유**: Mask R-CNN이 각 객체에 대해 **맞춤 마스크를 하나씩 제작**하는 방식이라면, YOLACT는 **미리 만들어둔 마스크 조각(프로토타입)들을 조합**하여 최종 마스크를 만드는 방식입니다. 레고 블록을 조합하는 것처럼요!
 
-2019년 Daniel Bolya가 발표한 **YOLACT(You Only Look At CoefficienTs)**는 실시간 인스턴스 세그멘테이션의 선구자입니다. Mask R-CNN이 각 RoI마다 마스크를 개별 예측하는 것과 달리, YOLACT는 전혀 다른 접근을 택했습니다.
+2019년 Daniel Bolya가 발표한 **YOLACT(You Only Look At CoefficienTs)**는 실시간 인스턴스 세그멘테이션의 선구자입니다. 이름에서 눈치채셨나요? [YOLO](../07-object-detection/03-yolo.md)의 "You Only Look" 정신을 계승하면서, "At CoefficienTs"라는 독자적인 아이디어를 결합한 것이죠. Mask R-CNN이 각 RoI마다 마스크를 개별 예측하는 것과 달리, YOLACT는 YOLO처럼 **속도를 최우선**에 두면서 전혀 다른 접근을 택했습니다.
 
 **YOLACT의 핵심 아이디어 — 마스크를 분해하라!**
 
@@ -157,13 +157,13 @@ print(f"마스크 출력: {masks.shape}")          # [5, 80, 28, 28]
 
 ### 4. 박스 없이도 가능하다 — SOLO와 CondInst
 
-Mask R-CNN과 YOLACT는 모두 **먼저 박스를 찾고** 그 안에서 마스크를 예측하는 방식입니다. 하지만 최근에는 **박스 없이 직접 마스크를 예측**하는 방법도 등장했습니다.
+Mask R-CNN과 YOLACT는 모두 **먼저 박스를 찾고** 그 안에서 마스크를 예측하는 방식입니다. 하지만 [Anchor-Free 탐지기](../07-object-detection/04-anchor-free.md)에서 앵커 없이 객체를 찾는 패러다임이 등장한 것처럼, 인스턴스 세그멘테이션에서도 **박스 없이 직접 마스크를 예측**하는 방법이 등장했습니다.
 
-**SOLOv2(2020)**는 이미지를 격자로 나누고, 각 격자 셀의 객체에 대해 **동적 커널**과 **마스크 특징**을 예측합니다. 이 둘을 합성곱하면 인스턴스 마스크가 됩니다. 바운딩 박스를 전혀 사용하지 않으면서도 Mask R-CNN에 근접한 성능(COCO AP 41.7%)을 달성했습니다.
+**SOLOv2(2020)**는 [FCOS](../07-object-detection/04-anchor-free.md)처럼 이미지를 격자로 나누고, 각 격자 셀의 객체에 대해 **동적 커널**과 **마스크 특징**을 예측합니다. 이 둘을 합성곱하면 인스턴스 마스크가 됩니다. 바운딩 박스를 전혀 사용하지 않으면서도 Mask R-CNN에 근접한 성능(COCO AP 41.7%)을 달성했습니다.
 
 **CondInst(Conditional Instance Segmentation)**도 비슷한 아이디어로, 각 인스턴스에 대해 **조건부 합성곱 필터**를 생성하고, 이 필터로 공유 특징 맵을 합성곱하여 마스크를 만듭니다.
 
-이런 **Box-Free** 접근법의 장점은 파이프라인이 단순해지고, NMS 같은 후처리를 간소화할 수 있다는 점입니다.
+이런 **Box-Free** 접근법의 장점은 파이프라인이 단순해지고, [NMS](../07-object-detection/01-detection-basics.md) 같은 후처리를 간소화할 수 있다는 점입니다. 객체 탐지에서의 Anchor-Free 혁명이 세그멘테이션으로까지 확장된 셈이죠.
 
 ## 실습: torchvision Mask R-CNN 사용하기
 
