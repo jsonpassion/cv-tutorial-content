@@ -1,0 +1,20 @@
+# Claude
+.claude/
+.claude
+.claudesession
+*.claudesession
+claude_output/
+CLAUDE.md
+contents_status.md
+
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

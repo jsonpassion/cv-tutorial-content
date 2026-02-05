@@ -1,0 +1,127 @@
+{
+  "title": "컴퓨터 비전 튜토리얼",
+  "subtitle": "초급자를 위한 단계별 학습 가이드",
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-05",
+  "language": "ko",
+  "author": "Jason",
+  "chapters": [
+    {
+      "id": "01-basics",
+      "title": "기초 이론",
+      "description": "이미지의 본질과 기본 처리",
+      "sections": [
+        {
+          "id": "01-what-is-image",
+          "title": "이미지란 무엇인가",
+          "file": "01-basics/01-what-is-image.md"
+        },
+        {
+          "id": "02-pixels-and-channels",
+          "title": "픽셀과 채널",
+          "file": "01-basics/02-pixels-and-channels.md"
+        },
+        {
+          "id": "03-filters",
+          "title": "필터의 개념",
+          "file": "01-basics/03-filters.md"
+        }
+      ]
+    },
+    {
+      "id": "02-cnn",
+      "title": "CNN 핵심 개념",
+      "description": "합성곱 신경망의 원리",
+      "sections": [
+        {
+          "id": "01-convolution",
+          "title": "Convolution 연산",
+          "file": "02-cnn/01-convolution.md"
+        },
+        {
+          "id": "02-pooling",
+          "title": "Pooling과 Stride",
+          "file": "02-cnn/02-pooling.md"
+        },
+        {
+          "id": "03-activation",
+          "title": "활성화 함수",
+          "file": "02-cnn/03-activation.md"
+        }
+      ]
+    },
+    {
+      "id": "03-practice",
+      "title": "실전 기초",
+      "description": "직접 구현하며 배우기",
+      "sections": [
+        {
+          "id": "01-mnist",
+          "title": "MNIST 손글씨 분류",
+          "file": "03-practice/01-mnist.md"
+        },
+        {
+          "id": "02-cifar10",
+          "title": "CIFAR-10 이미지 분류",
+          "file": "03-practice/02-cifar10.md"
+        }
+      ]
+    },
+    {
+      "id": "04-architectures",
+      "title": "주요 아키텍처",
+      "description": "CNN의 진화 과정",
+      "sections": [
+        {
+          "id": "01-lenet-alexnet",
+          "title": "LeNet과 AlexNet",
+          "file": "04-architectures/01-lenet-alexnet.md"
+        },
+        {
+          "id": "02-vgg-resnet",
+          "title": "VGG와 ResNet",
+          "file": "04-architectures/02-vgg-resnet.md"
+        },
+        {
+          "id": "03-efficient-models",
+          "title": "효율적인 모델들",
+          "file": "04-architectures/03-efficient-models.md"
+        }
+      ]
+    },
+    {
+      "id": "05-advanced",
+      "title": "고급 작업",
+      "description": "다양한 CV 태스크",
+      "sections": [
+        {
+          "id": "01-object-detection",
+          "title": "객체 탐지",
+          "file": "05-advanced/01-object-detection.md"
+        },
+        {
+          "id": "02-segmentation",
+          "title": "이미지 분할",
+          "file": "05-advanced/02-segmentation.md"
+        }
+      ]
+    },
+    {
+      "id": "06-vision-language",
+      "title": "Vision-Language",
+      "description": "비전과 언어의 통합",
+      "sections": [
+        {
+          "id": "01-vit",
+          "title": "Vision Transformer",
+          "file": "06-vision-language/01-vit.md"
+        },
+        {
+          "id": "02-clip",
+          "title": "CLIP",
+          "file": "06-vision-language/02-clip.md"
+        }
+      ]
+    }
+  ]
+}
